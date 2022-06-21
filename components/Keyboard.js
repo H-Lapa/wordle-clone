@@ -1,13 +1,20 @@
 import Key from './Key'
 
-const Keyboard = () => {
+const Keyboard = ({setText, text}) => {
     const firstRow = ['q','w','e','r','t','y','u','i','o','p']; 
     const secondRow = ['a','s','d','f','g','h','j','k','l'];
     const thirdRow = ['z','x','c','v','b','n','m'];
 
+    function updateArr(letter) {
+        console.log(text);
+        console.log(letter);
+        console.log("hello");
+        setText([...text, letter]);
+    }
+
     return (
         // keyboard
-        <div className=''>
+        <div>
         {/* firstRow */}
         <>
             {/* keyboard */}
@@ -15,7 +22,11 @@ const Keyboard = () => {
             <div className="max-w-full flex flex-row">
                 {/* letter */}
                 {firstRow.map((symbol) => {
-                    return <Key letter={symbol} />;
+                    return (
+                        <div onClick={() => updateArr(symbol)}>
+                            <Key letter={symbol} />
+                        </div>
+                    )
                 })}
             </div>
 

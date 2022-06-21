@@ -2,16 +2,19 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Keyboard from '../components/Keyboard'
 import Display from '../components/Display'
+import { useState } from 'react'
 
 export default function Home() {
+  const [text, setText] = useState([]);
+
   return (
-    <div className=''>
+    <div>
       <div>
-        <Display></Display>
+        <Display arr={text}/>
       </div>
 
       <div className='absolute bottom-0 w-11/12 m-auto flex'>
-        <Keyboard/>
+        <Keyboard setText={setText} text={text} />
       </div>
     </div>
   )
