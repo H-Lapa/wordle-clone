@@ -6,9 +6,9 @@ const Keyboard = () => {
     const thirdRow = ['z','x','c','v','b','n','m'];
 
     return (
-        //keyboard
-
-        //firstRow
+        // keyboard
+        <div className=''>
+        {/* firstRow */}
         <>
             {/* keyboard */}
             {/* firstRow */}
@@ -30,7 +30,8 @@ const Keyboard = () => {
             {/* third row */}
 
             <div className="max-w-full flex flex-row">
-                <Key letter={"Enter"}></Key>
+                <Key letter={"Enter"} className=""></Key>
+
                 {/* letter */}
                 {thirdRow.map((symbol) => {
                     return <Key letter={symbol} />;
@@ -40,7 +41,7 @@ const Keyboard = () => {
             </div>
             
         </>
-
+        </div>
     )
 }
 
