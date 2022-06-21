@@ -34,7 +34,11 @@ const Keyboard = ({setText, text}) => {
             <div className="max-w-full flex flex-row">
                 {/* letter */}
                 {secondRow.map((symbol) => {
-                    return <Key letter={symbol} />;
+                    return (
+                        <div onClick={() => updateArr(symbol)}>
+                            <Key letter={symbol} />
+                        </div>
+                    )
                 })}
             </div>
 
@@ -45,7 +49,11 @@ const Keyboard = ({setText, text}) => {
 
                 {/* letter */}
                 {thirdRow.map((symbol) => {
-                    return <Key letter={symbol} />;
+                    return (
+                        <div onClick={() => updateArr(symbol)}>
+                            <Key letter={symbol} />
+                        </div>
+                    )
                 })}
 
                 <Key letter={"<"}></Key>
