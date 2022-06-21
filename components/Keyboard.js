@@ -1,14 +1,46 @@
+import Key from './Key'
 
 const Keyboard = () => {
+    const firstRow = ['q','w','e','r','t','y','u','i','o','p']; 
+    const secondRow = ['a','s','d','f','g','h','j','k','l'];
+    const thirdRow = ['z','x','c','v','b','n','m'];
 
     return (
         //keyboard
-        <div className="max-w-full">
-            {/* letter */}
-            <div className="rounded-lg bg-gray-500 p-3 w-fit m-5">
-                <p className="">A</p>
+
+        //firstRow
+        <>
+            {/* keyboard */}
+            {/* firstRow */}
+            <div className="max-w-full flex flex-row">
+                {/* letter */}
+                {firstRow.map((symbol) => {
+                    return <Key letter={symbol} />;
+                })}
             </div>
-        </div>
+
+            {/* second row */}
+            <div className="max-w-full flex flex-row">
+                {/* letter */}
+                {secondRow.map((symbol) => {
+                    return <Key letter={symbol} />;
+                })}
+            </div>
+
+            {/* third row */}
+
+            <div className="max-w-full flex flex-row">
+                <Key letter={"Enter"}></Key>
+                {/* letter */}
+                {thirdRow.map((symbol) => {
+                    return <Key letter={symbol} />;
+                })}
+
+                <Key letter={"<"}></Key>
+            </div>
+            
+        </>
+
     )
 }
 
