@@ -6,11 +6,12 @@ import { useState } from 'react'
 
 export default function Home() {
   const [text, setText] = useState([]);
+  const [round, setRound] = useState(1);
 
   return (
     <div>
       <div>
-        <Display arr={text}/>
+        <Display arr={text} round={round}/>
       </div>
 
       <div className='absolute bottom-0 w-11/12 m-auto flex'>

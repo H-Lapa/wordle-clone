@@ -6,11 +6,22 @@ const Keyboard = ({setText, text}) => {
     const thirdRow = ['z','x','c','v','b','n','m'];
 
     function updateArr(letter) {
-        console.log(text);
-        console.log(letter);
-        console.log("hello");
-        setText([...text, letter]);
+        if (text.length == 5) {
+            console.log("Not enough space");
+        } else {    
+            setText([...text, letter]);
+        }
     }
+
+    function backspace () {
+        if (text.length == 0) {
+            console.log("array is empty");
+        } else {
+
+            setText(text.slice(0, text.length-1));
+        }
+    }
+
 
     return (
         // keyboard
@@ -19,7 +30,7 @@ const Keyboard = ({setText, text}) => {
         <>
             {/* keyboard */}
             {/* firstRow */}
-            <div className="max-w-full flex flex-row">
+            <div className="max-w-full flex flex-row justify-center">
                 {/* letter */}
                 {firstRow.map((symbol) => {
                     return (
@@ -31,7 +42,7 @@ const Keyboard = ({setText, text}) => {
             </div>
 
             {/* second row */}
-            <div className="max-w-full flex flex-row">
+            <div className="max-w-full flex flex-row justify-center">
                 {/* letter */}
                 {secondRow.map((symbol) => {
                     return (
@@ -44,8 +55,11 @@ const Keyboard = ({setText, text}) => {
 
             {/* third row */}
 
-            <div className="max-w-full flex flex-row">
-                <Key letter={"Enter"} className=""></Key>
+            <div className="max-w-full flex flex-row justify-center">
+
+                <div onClick={enterWord}>
+                    <Key letter={"Enter"} className=""></Key>
+                </div>
 
                 {/* letter */}
                 {thirdRow.map((symbol) => {
@@ -56,7 +70,9 @@ const Keyboard = ({setText, text}) => {
                     )
                 })}
 
-                <Key letter={"<"}></Key>
+                <div onClick={backspace}>
+                    <Key letter={"<"} ></Key>
+                </div>
             </div>
             
         </>
