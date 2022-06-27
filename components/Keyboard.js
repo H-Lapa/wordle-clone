@@ -1,9 +1,14 @@
 import Key from './Key'
+import words from './words.json'
 
-const Keyboard = ({setText, text}) => {
+const Keyboard = ({setText, text, setRound, round}) => {
     const firstRow = ['q','w','e','r','t','y','u','i','o','p']; 
     const secondRow = ['a','s','d','f','g','h','j','k','l'];
     const thirdRow = ['z','x','c','v','b','n','m'];
+    const arr =  JSON.stringify(words);   
+    console.log(arr);
+    const length5 = arr.filter(word => word.length > 6);
+    console.log(length5);
 
     function updateArr(letter) {
         if (text.length == 5) {
@@ -20,6 +25,10 @@ const Keyboard = ({setText, text}) => {
 
             setText(text.slice(0, text.length-1));
         }
+    }
+
+    function enterWord () {
+        setRound(round+1);
     }
 
 

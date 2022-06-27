@@ -15,7 +15,7 @@ export default function Home() {
       </div>
 
       <div className='absolute bottom-0 w-11/12 m-auto flex'>
-        <Keyboard setText={setText} text={text} />
+        <Keyboard setText={setText} text={text} setRound={setRound} round={round} />
       </div>
     </div>
   )
