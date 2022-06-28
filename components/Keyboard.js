@@ -15,6 +15,12 @@ const Keyboard = ({setText, text, setRound, round}) => {
         return temp;
     }
 
+    function checkWord (word) {
+        var checkWord = require('check-if-word'),
+        words = checkWord('en'); // setup the language for check, default is en
+        return words.check(word);
+    }
+
     const randomWord = produceWord();
     console.log(randomWord)
 
