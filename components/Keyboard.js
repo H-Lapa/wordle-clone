@@ -1,13 +1,21 @@
 import Key from './Key'
-var randomWords = require('random-words');
 
 const Keyboard = ({setText, text, setRound, round}) => {
     const firstRow = ['q','w','e','r','t','y','u','i','o','p']; 
     const secondRow = ['a','s','d','f','g','h','j','k','l'];
     const thirdRow = ['z','x','c','v','b','n','m'];
-
+    
     //random word produced here
-    const randomWord = randomWords({exactly: 1, minLength: 5, maxLength: 5})
+    function produceWord () {
+        var randomWords = require('random-words');
+        let temp = "";
+        while (temp.length != 5) {
+            temp = randomWords({exactly: 1, maxLength: 5, join: ''});
+        }
+        return temp;
+    }
+
+    const randomWord = produceWord();
     console.log(randomWord)
 
     function updateArr(letter) {
