@@ -1,14 +1,14 @@
 import Key from './Key'
-import words from './words.json'
+var randomWords = require('random-words');
 
 const Keyboard = ({setText, text, setRound, round}) => {
     const firstRow = ['q','w','e','r','t','y','u','i','o','p']; 
     const secondRow = ['a','s','d','f','g','h','j','k','l'];
     const thirdRow = ['z','x','c','v','b','n','m'];
-    const arr =  JSON.stringify(words);   
-    console.log(arr);
-    const length5 = arr.filter(word => word.length > 6);
-    console.log(length5);
+
+    //random word produced here
+    const randomWord = randomWords({exactly: 1, minLength: 5, maxLength: 5})
+    console.log(randomWord)
 
     function updateArr(letter) {
         if (text.length == 5) {
