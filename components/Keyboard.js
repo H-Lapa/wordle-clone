@@ -57,14 +57,14 @@ const Keyboard = ({setText, text, setRound, round}) => {
                 //if generated word letter == word letter inputted
                 if (randomWord[i] == text[i]) {
                     //this means its in the right position
-                    collection[i].style.color = "green";
+                    collection[i].style.backgroundColor = "green";
                     console.log("green")
                 } else if (checkForLetter(i)) {
                     //checks if letter is present
-                    collection[i].style.color = "yellow";
+                    collection[i].style.backgroundColor = "yellow";
                     console.log("yellow")
                 } else {
-                    collection[i].style.color = "red";
+                    collection[i].style.backgroundColor = "red";
                     console.log("red")
                 }
 
