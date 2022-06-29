@@ -6,11 +6,11 @@ const Display = ({arr, round}) => {
             <div className="flex justify-center">
                 <div className="grid grid-cols-5 gap-4 m-5 text-ce">
 
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 1 ? arr[0]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 1 ? arr[1]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 1 ? arr[2]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 1 ? arr[3]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 1 ? arr[4]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[0]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[1]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[2]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[3]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[4]: null}</div>
 
                 </div>
             </div>

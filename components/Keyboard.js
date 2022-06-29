@@ -1,10 +1,18 @@
+import { useEffect, useState } from 'react';
 import Key from './Key'
 
 const Keyboard = ({setText, text, setRound, round}) => {
     const firstRow = ['q','w','e','r','t','y','u','i','o','p']; 
     const secondRow = ['a','s','d','f','g','h','j','k','l'];
     const thirdRow = ['z','x','c','v','b','n','m'];
+    const [randomWord, setRandomWord] = useState('');
+
+    useEffect(() => {
+        produceWord();
+        console.log(randomWord);
+    }, []);
     
+    console.log(randomWord);
     //random word produced here
     function produceWord () {
         var randomWords = require('random-words');
@@ -12,7 +20,7 @@ const Keyboard = ({setText, text, setRound, round}) => {
         while (temp.length != 5) {
             temp = randomWords({exactly: 1, maxLength: 5, join: ''});
         }
-        return temp;
+        setRandomWord(temp);
     }
 
     function checkWord (word) {
@@ -21,8 +29,7 @@ const Keyboard = ({setText, text, setRound, round}) => {
         return words.check(word);
     }
 
-    const randomWord = produceWord();
-    console.log(randomWord)
+    
 
     function updateArr(letter) {
         if (text.length == 5) {
@@ -42,9 +49,50 @@ const Keyboard = ({setText, text, setRound, round}) => {
     }
 
     function enterWord () {
-        setRound(round+1);
+        //makes sure word exists in dictionary and text legnth is right
+        if (checkWord(text.join('')) && text.length == 5) {
+            const collection = document.getElementsByClassName("roundOne");
+            //looping through all 5 letters to perform checks
+            for (let i = 0; i < 5; i++) {
+                //if generated word letter == word letter inputted
+                if (randomWord[i] == text[i]) {
+                    //this means its in the right position
+                    collection[i].style.color = "green";
+                    console.log("green")
+                } else if (checkForLetter(i)) {
+                    //checks if letter is present
+                    collection[i].style.color = "yellow";
+                    console.log("yellow")
+                } else {
+                    collection[i].style.color = "red";
+                    console.log("red")
+                }
+
+            }
+            // setRound(round+1);
+            //change the color of the letters
+            //use class to find elements, then change their colors acordingly
+            //loop through array of element, check value against text
+
+        } else {
+            console.log("enter issue");
+            //produce error message, word isnt real
+            //or there isnt enough letters placed down
+        }
     }
 
+    function checkForLetter (i) {
+        //loop to check if letter exists in the word
+        for (let z = 0; z < 5; z++) {
+            //checks all letters against the single inputted letter
+            if (randomWord[z] == text[i]) {
+                //incorrect position but exists in word
+                
+                return true;
+            }   
+        }
+        return false;
+    }
 
     return (
         // keyboard
