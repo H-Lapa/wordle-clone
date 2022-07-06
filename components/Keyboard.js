@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react';
 import Key from './Key'
 
-const Keyboard = ({setText, text, setRound, round}) => {
+const Keyboard = ({setText, text }) => {
     const firstRow = ['q','w','e','r','t','y','u','i','o','p']; 
     const secondRow = ['a','s','d','f','g','h','j','k','l'];
     const thirdRow = ['z','x','c','v','b','n','m'];
+
     const [randomWord, setRandomWord] = useState('');
+    const [round, setRound] = useState(1);
 
     useEffect(() => {
         produceWord();
         console.log(randomWord);
     }, []);
+
+    useEffect (() => {
+        displayWord(round);
+        console.log("displayWord!");
+    }, [text]);
     
     console.log(randomWord);
     //random word produced here
@@ -29,6 +36,35 @@ const Keyboard = ({setText, text, setRound, round}) => {
         return words.check(word);
     }
 
+    function round2arr (round) {
+        switch (round) {
+            case 1:
+                return document.getElementsByClassName("roundOne");
+                break;
+            case 2:
+                return document.getElementsByClassName("roundTwo");
+                break;
+            case 3:
+                return document.getElementsByClassName("roundThree");
+                break;
+            case 4:
+                return document.getElementsByClassName("roundFour");
+                break;
+            case 5:
+                return document.getElementsByClassName("roundFive");
+                break;
+        }
+    }
+
+    function displayWord (round) {
+        const c = round2arr(round);
+        for (let i = 0; i < 5; i++) {
+            c[i].textContent = ' ';
+            c[i].textContent = text[i];
+            console.log(text[i]);
+        }
+    }
+
     
 
     function updateArr(letter) {
@@ -43,36 +79,44 @@ const Keyboard = ({setText, text, setRound, round}) => {
         if (text.length == 0) {
             console.log("array is empty");
         } else {
-
             setText(text.slice(0, text.length-1));
         }
     }
 
-    function enterWord () {
+    function enterWord (round) {
+        console.log("enterWord activated")
         //makes sure word exists in dictionary and text legnth is right
         if (checkWord(text.join('')) && text.length == 5) {
-            const collection = document.getElementsByClassName("roundOne");
+            const col = round2arr(round);
             //looping through all 5 letters to perform checks
             for (let i = 0; i < 5; i++) {
                 //if generated word letter == word letter inputted
                 if (randomWord[i] == text[i]) {
                     //this means its in the right position
-                    collection[i].style.backgroundColor = "green";
+                    col[i].style.backgroundColor = "green";
                     console.log("green")
                 } else if (checkForLetter(i)) {
                     //checks if letter is present
-                    collection[i].style.backgroundColor = "yellow";
+                    col[i].style.backgroundColor = "yellow";
                     console.log("yellow")
                 } else {
-                    collection[i].style.backgroundColor = "red";
+                    col[i].style.backgroundColor = "red";
                     console.log("red")
                 }
 
             }
-            // setRound(round+1);
+
+            setRound(round+1);
+            for (let x = 0; x < 5; x++) {
+                col[x].value = text[x];
+                
+            }
             //change the color of the letters
             //use class to find elements, then change their colors acordingly
             //loop through array of element, check value against text
+
+            //setting the text blanck for the next line
+            setText([]);
 
         } else {
             console.log("enter issue");
@@ -128,7 +172,7 @@ const Keyboard = ({setText, text, setRound, round}) => {
 
             <div className="max-w-full flex flex-row justify-center">
 
-                <div onClick={enterWord}>
+                <div onClick={() => enterWord(round)}>
                     <Key letter={"Enter"} className=""></Key>
                 </div>
 

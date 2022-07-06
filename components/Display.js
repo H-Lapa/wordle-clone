@@ -1,16 +1,16 @@
 
-const Display = ({arr, round}) => {
+const Display = () => {
     return (
         <div>
 
             <div className="flex justify-center">
                 <div className="grid grid-cols-5 gap-4 m-5 text-ce">
 
-                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[0]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[1]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[2]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[3]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center roundOne">{round == 1 ? arr[4]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundOne"> </div>
 
                 </div>
             </div>
@@ -18,11 +18,11 @@ const Display = ({arr, round}) => {
             <div className="flex justify-center">
                 <div className="grid grid-cols-5 gap-4 m-5 text-ce">
 
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 2 ? arr[0]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 2 ? arr[1]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 2 ? arr[2]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 2 ? arr[3]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 2 ? arr[4]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundTwo"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundTwo"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundTwo"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundTwo"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundTwo"> </div>
 
                 </div>
             </div>
@@ -30,11 +30,11 @@ const Display = ({arr, round}) => {
             <div className="flex justify-center">
                 <div className="grid grid-cols-5 gap-4 m-5 text-ce">
 
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 3 ? arr[0]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 3 ? arr[1]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 3 ? arr[2]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 3 ? arr[3]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 3 ? arr[4]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundThree"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundThree"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundThree"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundThree"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundThree"> </div>
 
                 </div>
             </div>
@@ -42,11 +42,11 @@ const Display = ({arr, round}) => {
             <div className="flex justify-center">
                 <div className="grid grid-cols-5 gap-4 m-5 text-ce">
 
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 4 ? arr[0]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 4 ? arr[1]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 4 ? arr[2]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 4 ? arr[3]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 4 ? arr[4]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFour"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFour"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFour"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFour"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFour"> </div>
 
                 </div>
             </div>
@@ -54,11 +54,11 @@ const Display = ({arr, round}) => {
             <div className="flex justify-center">
                 <div className="grid grid-cols-5 gap-4 m-5 text-ce">
 
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 5 ? arr[0]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 5 ? arr[1]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 5 ? arr[2]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 5 ? arr[3]: null}</div>
-                    <div className="bg-gray-500 p-5 rounded text-center">{round == 5 ? arr[4]: null}</div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFive"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFive"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFive"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFive"> </div>
+                    <div className="bg-gray-500 p-5 rounded text-center roundFive"> </div>
 
                 </div>
             </div>
